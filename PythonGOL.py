@@ -162,7 +162,8 @@ if __name__ in "__main__":
 
     EMPTY = ' '
     DEAD = ['░', '▒', '▓' ,EMPTY]
-    LIVING = ['▄','█','▀','■']
+    # LIVING = ['▄','█','▀','■']
+    LIVING = ['■']
     # LIVING = ['■']
     
     #Background space creation
@@ -186,10 +187,10 @@ if __name__ in "__main__":
     grid[3][117] = random.choice(LIVING)
 
     # Populates randomly
-    # for i in range(height):
-    #     for j in range(width):
-    #         if random.randint(0,4) >= 2:
-    #             tab[i][j] = LIVING[random.randint(0,len(LIVING)-1)] 
+    for i in range(height):
+        for j in range(width):
+            if random.randint(0,4) >= 2:
+                grid[i][j] = LIVING[random.randint(0,len(LIVING)-1)] 
     while(True):
-        grid = turn(grid, rule5)
+        grid = turn(grid, rule2)
         time.sleep(0.06)
